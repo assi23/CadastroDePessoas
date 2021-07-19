@@ -12,7 +12,9 @@ namespace CadastroPessoa
         static List<PessoaJuridica> listaPessoaJuridica = new List<PessoaJuridica>();
 
         PessoaFisica pFisica = new PessoaFisica();
+        PessoaJuridica pJuridica = new PessoaJuridica();
         int idpFis = 1;
+        int idpJuri = 1;
         public void Cabecalho()
         {
             Console.WriteLine(" ________________________________________________ ");
@@ -63,6 +65,19 @@ namespace CadastroPessoa
                         CriarMenu();
                         break;
                     case 2:
+                        string resp2 = string.Empty;
+                        do
+                        {
+                            Console.Clear();
+                            Console.WriteLine("\t\t\t\t ________________________________________________ ");
+                            Console.WriteLine("\t\t\t\t|            Cadastrando Pessoa Jurídica         |");
+                            Console.WriteLine("\t\t\t\t|________________________________________________|");
+                            PessoaJuridica model = pJuridica.CadastroPJuridica(idpJuri);
+                            idpJuri++;
+                            Console.WriteLine("Deseja cadastrar outra pessoa? [S/N]: ");
+                            resp2 = Validacao.ValidaConfirmacao();
+                        } while (resp2.Equals('s'));
+                        CriarMenu();
                         break;
                     case 3:
                         MostrarListaPessoaFisica();
