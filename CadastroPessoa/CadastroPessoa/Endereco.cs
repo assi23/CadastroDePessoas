@@ -14,9 +14,18 @@ namespace CadastroPessoa
 		public string Bairro { get; set; }
 		public string Cidade { get; set; }
 
+        public Endereco(string rua, int num, string comp, string bairro, string cidade)
+        {
+			this.Rua = rua;
+			this.Numero = num;
+			this.Complemento = comp;
+			this.Bairro = bairro;
+			this.Cidade = cidade;
+        }
+
 		public override string ToString()
 		{
-			return $"Rua:{this.Rua} Número:{this.Numero} Complemento:{this.Complemento} Bairro:{this.Bairro} Cidade:{this.Cidade}";
+			return $"Rua:{this.Rua} \nNúmero:{this.Numero} \nComplemento:{this.Complemento} \nBairro:{this.Bairro} \nCidade:{this.Cidade}";
 		}
 	}
 }
