@@ -8,6 +8,11 @@ namespace CadastroPessoa
 {
     class Menu
     {
+        static List<PessoaFisica> listaPessoaFisica = new List<PessoaFisica>();
+        static List<PessoaJuridica> listaPessoaJuridica = new List<PessoaJuridica>();
+
+        PessoaFisica pFisica = new PessoaFisica();
+        int idpFis = 1;
         public void Cabecalho()
         {
             Console.WriteLine(" ________________________________________________ ");
@@ -29,39 +34,64 @@ namespace CadastroPessoa
         }
         public void Escolha()
         {
+            int option;
             do
             {
-                Console.Write($"Opção: ");
-                int option = Validacao.ValidaInteiro();
-                do
+                Console.Write("Opção: ");
+                option = Validacao.ValidaInteiro();
+
+                switch (option)
                 {
-                    switch (option)
-                    {
-                        case 0:
-                            Console.WriteLine("Saindo... Pressione qualquer tecla para finalizar...");
-                            Console.ReadLine();
-                            break;
-                        case 1:
+                    case 0:
+                        Console.WriteLine("Saindo... Pressione qualquer tecla para finalizar...");
+                        Console.ReadLine();
+                        break;
+                    case 1:
+                            string resp = string.Empty;
+                        do
+                        {
                             Console.Clear();
-                            break;
-                        case 2:
-                            break;
-                        case 3:
-                            break;
-                        case 4:
-                            break;
-                        default:
-                            break;
-                    }
-                } while (option < 0 && option > 4);
-            } while (true);
+                            Console.WriteLine("\t\t\t\t ________________________________________________ ");
+                            Console.WriteLine("\t\t\t\t|            Cadastrando Pessoa Fisica           |");
+                            Console.WriteLine("\t\t\t\t|________________________________________________|");
+                            PessoaFisica model = pFisica.Cadastro(idpFis);
+                            listaPessoaFisica.Add(model);
+                            idpFis++;
+                            Console.Write("Deseja cadastrar outra pessoa?[S/N]: ");
+                            resp = Validacao.ValidaConfirmacao();
+                        } while (resp.Equals("s"));
+                        CriarMenu();
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        MostrarListaPessoaFisica();
+                        Console.Read();
+                        break;
+                    case 4:
+                        break;
+                    default:
+                        break;
+                }
+            } while (option < 0 && option > 4);
         }
         public void CriarMenu()
         {
+            Console.Clear();
             Cabecalho();
             Opcoes();
             Rodape();
             Escolha();
+        }
+
+        public void MostrarListaPessoaFisica()
+        {
+            Console.WriteLine("\t\tLista De Pessoas Fisica");
+            Console.WriteLine("\t\t***********************");
+            foreach(var pessoa in listaPessoaFisica)
+            {
+                Console.WriteLine(pessoa);
+            }
         }
     }
 }

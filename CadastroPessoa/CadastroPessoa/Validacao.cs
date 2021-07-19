@@ -35,5 +35,49 @@ namespace CadastroPessoa
                 }
             } while (true);
         }
+        public static string ValidaString()
+        {
+            do
+            {
+
+                string dado = Console.ReadLine().Trim();
+                if (!string.IsNullOrEmpty(dado))
+                {
+                    return dado;
+                }
+                Console.WriteLine("Erro! Digite algo: ");
+            } while (true);
+        }
+        public static string ValidaConfirmacao()
+        {
+            do
+            {
+                string dado = Console.ReadLine().Trim().ToLower();
+                if (dado.Equals("s") || dado.Equals("n"))
+                {
+                    return dado;
+                }
+                Console.Write("Dado invalido. Digite apenas [S] ou [N]: ");
+            } while (true);
+        }
+        public static string ValidaRG()
+        {
+            do
+            {
+                string dado = Console.ReadLine().Trim();
+                if (!string.IsNullOrEmpty(dado))
+                {
+                    if (dado.Length <= 7)
+                    {
+                        return dado;
+                    }
+                    else
+                    {
+
+                    }
+                }
+                Console.WriteLine("Erro! Digite algo: ");
+            } while (true);
+        }
     }
 }

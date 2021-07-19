@@ -21,10 +21,48 @@ namespace CadastroPessoa
 			this.CPF = cpf;
 			this.Endereco = endereco;
 		}
+        public PessoaFisica()
+        {
+        }
+
+		public PessoaFisica Cadastro(int id)
+        {
+            Console.WriteLine($"\nCadastrando {id}ª Pessoa: ");
+            Console.Write("Digite o Nome: ");
+			string nome = Validacao.ValidaString();
+            Console.Write("Digite o ano de Nascimento: ");
+            int ano = Validacao.ValidaInteiro();
+            Console.Write("Digite o mês de Nascimento: ");
+            int mes = Validacao.ValidaInteiro();
+            Console.Write("Digite o dia de Nascimento: ");
+            int dia = Validacao.ValidaInteiro();
+            Console.Write("Digite o Email: ");
+			string email = Validacao.ValidaString();
+            Console.Write("Digite o RG: ");
+			string rg = Validacao.ValidaString();
+            Console.Write("Digite o CPF: ");
+			string cpf = Validacao.ValidaString();
+            Console.Write("Digite a Rua: ");
+            string rua = Validacao.ValidaString();
+            Console.Write("Digite o número: ");
+            int num = Validacao.ValidaInteiro();
+            Console.Write("Digite o complemento: ");
+            string comp = Validacao.ValidaString();
+            Console.Write("Digite o Bairro: ");
+            string bairro = Validacao.ValidaString();
+            Console.Write("Digite a Cidade: ");
+            string cidade = Validacao.ValidaString();
+            Console.WriteLine("Digite o ano de nascimento: ");
+
+            DateTime data = new DateTime(ano, mes, dia);
+            Endereco endModel = new Endereco(rua, num, comp, bairro, cidade);
+            PessoaFisica model = new PessoaFisica(id, nome, data, email, rg, cpf, endModel);
+            return model;
+        }
 
         public override string ToString()
         {
-            return $"ID: {this.ID} Nome: {this.Nome} Email: {this.Email} RG: {this.RG} CPF: {this.CPF}\nEndereço: {Endereco}";
+            return $"Nome: {this.Nome}\n=-=-=-=-=-=-=-=-=-=\nID: {this.ID}\nData Nascimento: {this.DataNasc.ToShortDateString()}\nEmail: {this.Email}\nRG: {this.RG}\nCPF: {this.CPF}\nEndereço: {Endereco}";
         }
 
         public override bool Equals(object pessoaFisica)
