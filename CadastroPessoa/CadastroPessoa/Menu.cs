@@ -46,7 +46,7 @@ namespace CadastroPessoa
                 {
                     case 0:
                         Console.WriteLine("Saindo... Pressione qualquer tecla para finalizar...");
-                        Console.ReadLine();
+                        Console.ReadKey();
                         break;
                     case 1:
                             string resp = string.Empty;
@@ -83,15 +83,15 @@ namespace CadastroPessoa
                     case 3:
                         Console.Clear();
                         MostrarListaPessoaFisica();
-                        Console.WriteLine("Digite algo para voltar ao menu...");
-                        Console.Read();
+                        Console.WriteLine("Pressione qualquer tecla para volta ao menu...");
+                        Console.ReadKey();
                         CriarMenu();
                         break;
                     case 4:
                         Console.Clear();
                         MostrarListaPessoaJuridica();
-                        Console.WriteLine("Digite algo para voltar ao menu...");
-                        Console.Read();
+                        Console.WriteLine("Pressione qualquer tecla para volta ao menu...");
+                        Console.ReadKey();
                         CriarMenu();
                         break;
                     default:
