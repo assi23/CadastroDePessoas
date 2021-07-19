@@ -52,7 +52,6 @@ namespace CadastroPessoa
             string bairro = Validacao.ValidaString();
             Console.Write("Digite a Cidade: ");
             string cidade = Validacao.ValidaString();
-            Console.WriteLine("Digite o ano de nascimento: ");
 
             DateTime data = new DateTime(ano, mes, dia);
             Endereco endModel = new Endereco(rua, num, comp, bairro, cidade);
