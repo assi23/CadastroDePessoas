@@ -13,5 +13,10 @@ namespace CadastroPessoa
 		public string Complemento { get; set; }
 		public string Bairro { get; set; }
 		public string Cidade { get; set; }
+
+		public override string ToString()
+		{
+			return $"Rua:{this.Rua} Número:{this.Numero} Complemento:{this.Complemento} Bairro:{this.Bairro} Cidade:{this.Cidade}";
+		}
 	}
 }
