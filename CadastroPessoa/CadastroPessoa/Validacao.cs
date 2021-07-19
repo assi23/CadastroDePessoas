@@ -65,13 +65,28 @@ namespace CadastroPessoa
             do
             {
                 int dado = ValidaInteiro();
-                if (dado.ToString().Length > 3 && dado.ToString().Length <= 7)
+                if (dado.ToString().Length >= 6 && dado.ToString().Length <= 8)
                 {
                     return dado.ToString();
                 }
                 else
                 {
                     Console.WriteLine("Tamanho invalido. Digite um RG valido: ");
+                }
+            } while (true);
+        }
+        public static string ValidaCPF()
+        {
+            do
+            {
+                int dado = ValidaInteiro();
+                if (dado.ToString().Length == 11)
+                {
+                    return dado.ToString();
+                }
+                else
+                {
+                    Console.WriteLine("Tamanho invalido. Digite um CPF valido. Apenas números, 11 digitos: ");
                 }
             } while (true);
         }

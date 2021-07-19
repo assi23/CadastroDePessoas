@@ -30,14 +30,14 @@ namespace CadastroPessoa
             Console.WriteLine($"\nCadastrando {id}ª Pessoa: ");
             Console.Write("Digite o Nome: ");
 			string nome = Validacao.ValidaString();
-            Console.Write("Digite o ano de Nascimento: ");
+            Console.Write("Digite a Data de Nascimento (dd/mm/aaaa): ");
             DateTime data = Validacao.ValidaDataNasc();
             Console.Write("Digite o Email: ");
 			string email = Validacao.ValidaString();
             Console.Write("Digite o RG: ");
 			string rg = Validacao.ValidaRG();
             Console.Write("Digite o CPF: ");
-			string cpf = Validacao.ValidaString();
+            string cpf = Validacao.ValidaCPF();
             Console.Write("Digite a Rua: ");
             string rua = Validacao.ValidaString();
             Console.Write("Digite o número: ");
@@ -56,7 +56,7 @@ namespace CadastroPessoa
 
         public override string ToString()
         {
-            return $"Nome: {this.Nome}\n=-=-=-=-=-=-=-=-=-=\nID: {this.ID}\nData Nascimento: {this.DataNasc.ToShortDateString()}\nEmail: {this.Email}\nRG: {this.RG}\nCPF: {this.CPF}\nEndereço: {Endereco}";
+            return $"Nome: {this.Nome}\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\nID: {this.ID}\nData Nascimento: {this.DataNasc.ToShortDateString()}\nEmail: {this.Email}\nRG: {this.RG}\nCPF: {this.CPF}\nEndereço: {Endereco}\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=";
         }
 
         public override bool Equals(object pessoaFisica)
