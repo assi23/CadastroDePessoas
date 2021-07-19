@@ -8,8 +8,8 @@ namespace CadastroPessoa
 {
     class Menu
     {
-        static List<PessoaFisica> listaPessoaFisica = new List<PessoaFisica>();
-        static List<PessoaJuridica> listaPessoaJuridica = new List<PessoaJuridica>();
+         List<PessoaFisica> listaPessoaFisica = new List<PessoaFisica>();
+         List<PessoaJuridica> listaPessoaJuridica = new List<PessoaJuridica>();
 
         PessoaFisica pFisica = new PessoaFisica();
         PessoaJuridica pJuridica = new PessoaJuridica();
@@ -73,6 +73,7 @@ namespace CadastroPessoa
                             Console.WriteLine("\t\t\t\t|            Cadastrando Pessoa Jurídica         |");
                             Console.WriteLine("\t\t\t\t|________________________________________________|");
                             PessoaJuridica model = pJuridica.CadastroPJuridica(idpJuri);
+                            listaPessoaJuridica.Add(model);
                             idpJuri++;
                             Console.WriteLine("Deseja cadastrar outra pessoa? [S/N]: ");
                             resp2 = Validacao.ValidaConfirmacao();
@@ -84,6 +85,8 @@ namespace CadastroPessoa
                         Console.Read();
                         break;
                     case 4:
+                        MostrarListaPessoaJuridica();
+                        Console.Read();
                         break;
                     default:
                         break;
@@ -103,6 +106,15 @@ namespace CadastroPessoa
             Console.WriteLine("\t\tLista De Pessoas Fisica");
             Console.WriteLine("\t\t***********************");
             foreach(var pessoa in listaPessoaFisica)
+            {
+                Console.WriteLine(pessoa);
+            }
+        }
+        public void MostrarListaPessoaJuridica()
+        {
+            Console.WriteLine("\t\tLista de Pessoa Jurídica");
+            Console.WriteLine("\t\t***********************");
+            foreach (var pessoa in listaPessoaJuridica)
             {
                 Console.WriteLine(pessoa);
             }

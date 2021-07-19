@@ -30,7 +30,7 @@ namespace CadastroPessoa
 			Console.Write("Digite o Nome: ");
 			string nome = Validacao.ValidaString();
 			Console.Write("Digite a data de fundação: ");
-			DateTime data = Convert.ToDateTime(Console.ReadLine());
+			DateTime data = Validacao.ValidaDataNasc();
 			Console.Write("Digite o Email: ");
 			string email = Validacao.ValidaString();
 			Console.Write("Digite o IE: ");
