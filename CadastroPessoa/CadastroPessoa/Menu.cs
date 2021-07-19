@@ -65,8 +65,11 @@ namespace CadastroPessoa
                     case 2:
                         break;
                     case 3:
+                        Console.Clear();
                         MostrarListaPessoaFisica();
+                        Console.WriteLine("Digite algo para voltar ao menu...");
                         Console.Read();
+                        CriarMenu();
                         break;
                     case 4:
                         break;
@@ -87,9 +90,21 @@ namespace CadastroPessoa
         {
             Console.WriteLine("\t\tLista De Pessoas Fisica");
             Console.WriteLine("\t\t***********************");
-            foreach(var pessoa in listaPessoaFisica)
+            if(listaPessoaFisica.Count == 0)
             {
-                Console.WriteLine(pessoa);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(" ______________________________________________");
+                Console.WriteLine("| Não existe nenhuma Pessoa fisica cadastrada! |");
+                Console.WriteLine("|______________________________________________|\n");
+                Console.ResetColor();
+
+            }
+            else
+            {
+                foreach(var pessoa in listaPessoaFisica)
+                {
+                    Console.WriteLine(pessoa);
+                }
             }
         }
     }

@@ -56,7 +56,7 @@ namespace CadastroPessoa
 
         public override string ToString()
         {
-            return $"Nome: {this.Nome}\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\nID: {this.ID}\nData Nascimento: {this.DataNasc.ToShortDateString()}\nEmail: {this.Email}\nRG: {this.RG}\nCPF: {this.CPF}\nEndereço: {Endereco}\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=";
+            return $"Pessoa {this.ID}\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\nNome: {this.Nome}\nData Nascimento: {this.DataNasc.ToShortDateString()}\nEmail: {this.Email}\nRG: {this.RG}\nCPF: {this.CPF}\nEndereço: {Endereco}\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=";
         }
 
         public override bool Equals(object pessoaFisica)

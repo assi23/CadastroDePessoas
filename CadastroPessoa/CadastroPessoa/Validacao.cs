@@ -79,7 +79,7 @@ namespace CadastroPessoa
         {
             do
             {
-                int dado = ValidaInteiro();
+                string dado = ValidaString();
                 if (dado.ToString().Length == 11)
                 {
                     return dado.ToString();
