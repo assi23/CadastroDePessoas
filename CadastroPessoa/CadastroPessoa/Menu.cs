@@ -34,7 +34,7 @@ namespace CadastroPessoa
         {
             Console.WriteLine("|________________________________________________|");
         }
-        public void Escolha()
+        public void EscolhaMenuPrincipal()
         {
             int option;
             do
@@ -88,8 +88,11 @@ namespace CadastroPessoa
                         CriarMenu();
                         break;
                     case 4:
+                        Console.Clear();
                         MostrarListaPessoaJuridica();
+                        Console.WriteLine("Digite algo para voltar ao menu...");
                         Console.Read();
+                        CriarMenu();
                         break;
                     default:
                         break;
@@ -102,7 +105,7 @@ namespace CadastroPessoa
             Cabecalho();
             Opcoes();
             Rodape();
-            Escolha();
+            EscolhaMenuPrincipal();
         }
         public void MostrarListaPessoaFisica()
         {
@@ -129,9 +132,21 @@ namespace CadastroPessoa
         {
             Console.WriteLine("\t\tLista de Pessoa Jurídica");
             Console.WriteLine("\t\t***********************");
-            foreach (var pessoa in listaPessoaJuridica)
+            if (listaPessoaJuridica.Count == 0)
             {
-                Console.WriteLine(pessoa);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(" ______________________________________________");
+                Console.WriteLine("| Não existe nenhuma Pessoa fisica cadastrada! |");
+                Console.WriteLine("|______________________________________________|\n");
+                Console.ResetColor();
+
+            }
+            else
+            {
+                foreach (var pessoa in listaPessoaJuridica)
+                {
+                    Console.WriteLine(pessoa);
+                }
             }
         }
     }

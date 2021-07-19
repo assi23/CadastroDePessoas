@@ -34,9 +34,9 @@ namespace CadastroPessoa
 			Console.Write("Digite o Email: ");
 			string email = Validacao.ValidaString();
 			Console.Write("Digite o IE: ");
-			string ie = Validacao.ValidaString();
+			string ie = Validacao.ValidaIE();
 			Console.Write("Digite o CNPJ: ");
-			string cnpj = Validacao.ValidaString();
+			string cnpj = Validacao.ValidaCNPJ();
 			Console.Write("Digite a Rua: ");
 			string rua = Validacao.ValidaString();
 			Console.Write("Digite o número: ");
@@ -54,7 +54,7 @@ namespace CadastroPessoa
 		}
 		public override string ToString()
 		{
-			return $"Nome: {this.Nome}\n=-=-=-=-=-=-=-=-=-=\nID: {this.ID}\nData de Fundação: {this.DataNasc.ToShortDateString()}\nEmail: {this.Email}\nIE: {this.IE}\nCNPJ: {this.CNPJ}\nEndereço: {Endereco}";
+			return $"Empresa {this.ID}\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\nNome: {this.Nome}\nData de Fundação: {this.DataNasc.ToShortDateString()}\nEmail: {this.Email}\nIE: {this.IE}\nCNPJ: {this.CNPJ}\nEndereço: {Endereco}\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=";
 		}
 
 		public override bool Equals(object pessoaJuridica)

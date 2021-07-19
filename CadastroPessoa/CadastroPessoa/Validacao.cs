@@ -35,6 +35,33 @@ namespace CadastroPessoa
                 }
             } while (true);
         }
+        public static long ValidaLong()
+        {
+            do
+            {
+                try
+                {
+                    long dado = Convert.ToInt64(Console.ReadLine().Trim());
+                    return dado;
+                }
+                catch (ArgumentException)
+                {
+                    Console.WriteLine("Dado nulo. Digite algo: ");
+                }
+                catch (FormatException)
+                {
+                    Console.WriteLine("Dado invalido. Digite um número: ");
+                }
+                catch (OverflowException)
+                {
+                    Console.WriteLine($"Número fora dos limites. Digite algo entre {int.MinValue} e {int.MaxValue}): ");
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine("Dado invalido. Digite novamente: ");
+                }
+            } while (true);
+        }
         public static string ValidaString()
         {
             do
@@ -79,7 +106,7 @@ namespace CadastroPessoa
         {
             do
             {
-                string dado = Convert.ToString(Validacao.ValidaInteiro());
+                string dado = Convert.ToString(Validacao.ValidaLong());
                 if (dado.ToString().Length == 11)
                 {
                     return dado.ToString();
@@ -94,7 +121,7 @@ namespace CadastroPessoa
         {
             do
             {
-                string dado = Convert.ToString(Validacao.ValidaInteiro());
+                string dado = Convert.ToString(Validacao.ValidaLong());
                 if (dado.ToString().Length == 14)
                 {
                     return dado.ToString();
@@ -109,7 +136,7 @@ namespace CadastroPessoa
         {
             do
             {
-                string dado = Convert.ToString(Validacao.ValidaInteiro());
+                string dado = Convert.ToString(Validacao.ValidaLong());
                 if (dado.ToString().Length == 13)
                 {
                     return dado.ToString();
