@@ -10,5 +10,15 @@ namespace CadastroPessoa
 	{
 		public string RG{ get; set; }
 		public string CPF{ get; set; }
+
+		public PessoaFisica(int id, DateTime datanasc,string email,Endereco endereco,string rg,string cpf)
+		{
+			this.ID = id;
+			this.DataNasc = datanasc;
+			this.Email = email;
+			this.Endereco = endereco;
+			this.RG = rg;
+			this.CPF = cpf;
+		}
 	}
 }
