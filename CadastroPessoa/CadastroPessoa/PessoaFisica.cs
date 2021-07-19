@@ -31,11 +31,7 @@ namespace CadastroPessoa
             Console.Write("Digite o Nome: ");
 			string nome = Validacao.ValidaString();
             Console.Write("Digite o ano de Nascimento: ");
-            int ano = Validacao.ValidaInteiro();
-            Console.Write("Digite o mês de Nascimento: ");
-            int mes = Validacao.ValidaInteiro();
-            Console.Write("Digite o dia de Nascimento: ");
-            int dia = Validacao.ValidaInteiro();
+            DateTime data = Convert.ToDateTime(Console.ReadLine());
             Console.Write("Digite o Email: ");
 			string email = Validacao.ValidaString();
             Console.Write("Digite o RG: ");
@@ -53,7 +49,6 @@ namespace CadastroPessoa
             Console.Write("Digite a Cidade: ");
             string cidade = Validacao.ValidaString();
 
-            DateTime data = new DateTime(ano, mes, dia);
             Endereco endModel = new Endereco(rua, num, comp, bairro, cidade);
             PessoaFisica model = new PessoaFisica(id, nome, data, email, rg, cpf, endModel);
             return model;
