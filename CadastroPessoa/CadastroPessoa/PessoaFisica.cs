@@ -31,11 +31,11 @@ namespace CadastroPessoa
             Console.Write("Digite o Nome: ");
 			string nome = Validacao.ValidaString();
             Console.Write("Digite o ano de Nascimento: ");
-            DateTime data = Convert.ToDateTime(Console.ReadLine());
+            DateTime data = Validacao.ValidaDataNasc();
             Console.Write("Digite o Email: ");
 			string email = Validacao.ValidaString();
             Console.Write("Digite o RG: ");
-			string rg = Validacao.ValidaString();
+			string rg = Validacao.ValidaRG();
             Console.Write("Digite o CPF: ");
 			string cpf = Validacao.ValidaString();
             Console.Write("Digite a Rua: ");

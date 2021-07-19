@@ -83,7 +83,6 @@ namespace CadastroPessoa
             Rodape();
             Escolha();
         }
-
         public void MostrarListaPessoaFisica()
         {
             Console.WriteLine("\t\tLista De Pessoas Fisica");

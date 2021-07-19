@@ -64,19 +64,31 @@ namespace CadastroPessoa
         {
             do
             {
-                string dado = Console.ReadLine().Trim();
-                if (!string.IsNullOrEmpty(dado))
+                int dado = ValidaInteiro();
+                if (dado > 3 && dado <= 7)
                 {
-                    if (dado.Length <= 7)
-                    {
-                        return dado;
-                    }
-                    else
-                    {
-
-                    }
+                    return dado.ToString();
                 }
-                Console.WriteLine("Erro! Digite algo: ");
+                else
+                {
+                    Console.WriteLine("Tamanho invalido. Digite um RG valido: ");
+                }
+            } while (true);
+        }
+
+        public static DateTime ValidaDataNasc()
+        {
+            do
+            {
+                try
+                {
+                    DateTime data = Convert.ToDateTime(Console.ReadLine());
+                    return data;
+                }
+                catch (Exception)
+                {
+                    Console.Write("Data invalida. Digite no formato dd/mm/aaaa ou aaaa/mm/dd: ");
+                }
             } while (true);
         }
     }
