@@ -29,12 +29,12 @@ namespace CadastroPessoa
         }
         public void Escolha()
         {
-            do
-            {
-                Console.Write($"Opção: ");
-                int option = Validacao.ValidaInteiro();
+            int option;
                 do
                 {
+                    Console.Write($"Opção: ");
+                    option = Validacao.ValidaInteiro();
+
                     switch (option)
                     {
                         case 0:
@@ -54,7 +54,6 @@ namespace CadastroPessoa
                             break;
                     }
                 } while (option < 0 && option > 4);
-            } while (true);
         }
         public void CriarMenu()
         {
