@@ -64,8 +64,8 @@ namespace CadastroPessoa
         {
             do
             {
-                int dado = ValidaInteiro();
-                if (dado.ToString().Length >= 6 && dado.ToString().Length <= 8)
+                string dado = Convert.ToString(Validacao.ValidaInteiro());
+                if (dado.Length >= 6 && dado.Length <= 8)
                 {
                     return dado.ToString();
                 }
@@ -79,7 +79,7 @@ namespace CadastroPessoa
         {
             do
             {
-                string dado = ValidaString();
+                string dado = Convert.ToString(Validacao.ValidaInteiro());
                 if (dado.ToString().Length == 11)
                 {
                     return dado.ToString();
@@ -90,6 +90,37 @@ namespace CadastroPessoa
                 }
             } while (true);
         }
+        public static string ValidaCNPJ()
+        {
+            do
+            {
+                string dado = Convert.ToString(Validacao.ValidaInteiro());
+                if (dado.ToString().Length == 14)
+                {
+                    return dado.ToString();
+                }
+                else
+                {
+                    Console.WriteLine("Tamanho invalido. Digite um CNPJ valido. Apenas números, 14 digitos: ");
+                }
+            } while (true);
+        }
+        public static string ValidaIE()
+        {
+            do
+            {
+                string dado = Convert.ToString(Validacao.ValidaInteiro());
+                if (dado.ToString().Length == 13)
+                {
+                    return dado.ToString();
+                }
+                else
+                {
+                    Console.WriteLine("Tamanho invalido. Digite um IE valido. Apenas números, 13 digitos: ");
+                }
+            } while (true);
+        }
+
 
         public static DateTime ValidaDataNasc()
         {
