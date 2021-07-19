@@ -22,11 +22,11 @@ namespace CadastroPessoa
         public void Opcoes()
         {
             Console.WriteLine("|                                                |");
-            Console.WriteLine("|[1] Cadastrar Pessoa Fisica                     |");
-            Console.WriteLine("|[2] Cadastrar Pessoa Juridica                   |");
-            Console.WriteLine("|[3] Lista De Pessoas Fisica                     |");
-            Console.WriteLine("|[4] Lista De Pessoas Juridicas                  |");
-            Console.WriteLine("|[0] FINALIZAR PROGRAMA                          |");
+            Console.WriteLine("|         [1] Cadastrar Pessoa Fisica            |");
+            Console.WriteLine("|         [2] Cadastrar Pessoa Juridica          |");
+            Console.WriteLine("|         [3] Lista De Pessoas Fisica            |");
+            Console.WriteLine("|         [4] Lista De Pessoas Juridicas         |");
+            Console.WriteLine("|         [0] FINALIZAR PROGRAMA                 |");
         }
         public void Rodape()
         {

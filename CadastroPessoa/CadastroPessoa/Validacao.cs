@@ -65,7 +65,7 @@ namespace CadastroPessoa
             do
             {
                 int dado = ValidaInteiro();
-                if (dado > 3 && dado <= 7)
+                if (dado.ToString().Length > 3 && dado.ToString().Length <= 7)
                 {
                     return dado.ToString();
                 }
