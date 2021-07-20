@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cadastro.cs" />
     <Compile Include="Endereco.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="MenuLista.cs" />

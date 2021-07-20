@@ -25,38 +25,10 @@ namespace CadastroPessoa
         {
         }
 
-		public PessoaFisica Cadastro(int id)
-        {
-            Console.WriteLine($"\nCadastrando {id}ª Pessoa: ");
-            Console.Write("Digite o Nome: ");
-			string nome = Validacao.ValidaString();
-            Console.Write("Digite a Data de Nascimento (dd/mm/aaaa): ");
-            DateTime data = Validacao.ValidaDataNasc();
-            Console.Write("Digite o Email: ");
-			string email = Validacao.ValidaString();
-            Console.Write("Digite o RG: ");
-			string rg = Validacao.ValidaRG();
-            Console.Write("Digite o CPF: ");
-            string cpf = Validacao.ValidaCPF();
-            Console.Write("Digite a Rua: ");
-            string rua = Validacao.ValidaString();
-            Console.Write("Digite o número: ");
-            int num = Validacao.ValidaInteiro();
-            Console.Write("Digite o complemento: ");
-            string comp = Validacao.ValidaString();
-            Console.Write("Digite o Bairro: ");
-            string bairro = Validacao.ValidaString();
-            Console.Write("Digite a Cidade: ");
-            string cidade = Validacao.ValidaString();
-
-            Endereco endModel = new Endereco(rua, num, comp, bairro, cidade);
-            PessoaFisica model = new PessoaFisica(id, nome, data, email, rg, cpf, endModel);
-            return model;
-        }
 
         public override string ToString()
         {
-            return $"Pessoa {this.ID}\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\nNome: {this.Nome}\nData Nascimento: {this.DataNasc.ToShortDateString()}\nEmail: {this.Email}\nRG: {this.RG}\nCPF: {this.CPF}\nEndereço: {Endereco}\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=";
+            return $"Pessoa {this.ID}\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\nNome: {this.Nome}\nData Nascimento: {this.DataNasc.ToShortDateString()}\nEmail: {this.Email}\nRG: {this.RG}\nCPF: {this.CPF.Insert(3, ".").Insert(7, ".").Insert(11, "-")}\nEndereço: {Endereco}\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=";
         }
 
         public override bool Equals(object pessoaFisica)

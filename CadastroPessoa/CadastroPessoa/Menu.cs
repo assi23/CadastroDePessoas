@@ -8,11 +8,10 @@ namespace CadastroPessoa
 {
     class Menu
     {
-         List<PessoaFisica> listaPessoaFisica = new List<PessoaFisica>();
-         List<PessoaJuridica> listaPessoaJuridica = new List<PessoaJuridica>();
-
-        PessoaFisica pFisica = new PessoaFisica();
-        PessoaJuridica pJuridica = new PessoaJuridica();
+        public static List<PessoaFisica> listaPessoaFisica = new List<PessoaFisica>();
+        public static List<PessoaJuridica> listaPessoaJuridica = new List<PessoaJuridica>();
+        Validacao v = new Validacao();
+        Cadastro c = new Cadastro();
         int idpFis = 1;
         int idpJuri = 1;
         public void Cabecalho()
@@ -40,7 +39,7 @@ namespace CadastroPessoa
             do
             {
                 Console.Write("Opção: ");
-                option = Validacao.ValidaInteiro();
+                option = v.ValidaInteiro();
 
                 switch (option)
                 {
@@ -56,11 +55,11 @@ namespace CadastroPessoa
                             Console.WriteLine("\t\t\t\t ________________________________________________ ");
                             Console.WriteLine("\t\t\t\t|            Cadastrando Pessoa Fisica           |");
                             Console.WriteLine("\t\t\t\t|________________________________________________|");
-                            PessoaFisica model = pFisica.Cadastro(idpFis);
+                            PessoaFisica model = c.CadastroPFis(idpFis);
                             listaPessoaFisica.Add(model);
                             idpFis++;
                             Console.Write("Deseja cadastrar outra pessoa?[S/N]: ");
-                            resp = Validacao.ValidaConfirmacao();
+                            resp = v.ValidaConfirmacao();
                         } while (resp.Equals("s"));
                         CriarMenu();
                         break;
@@ -72,11 +71,11 @@ namespace CadastroPessoa
                             Console.WriteLine("\t\t\t\t ________________________________________________ ");
                             Console.WriteLine("\t\t\t\t|            Cadastrando Pessoa Jurídica         |");
                             Console.WriteLine("\t\t\t\t|________________________________________________|");
-                            PessoaJuridica model = pJuridica.CadastroPJuridica(idpJuri);
+                            PessoaJuridica model = c.CadastroPJur(idpJuri);
                             listaPessoaJuridica.Add(model);
                             idpJuri++;
                             Console.WriteLine("Deseja cadastrar outra pessoa? [S/N]: ");
-                            resp2 = Validacao.ValidaConfirmacao();
+                            resp2 = v.ValidaConfirmacao();
                         } while (resp2.Equals('s'));
                         CriarMenu();
                         break;
