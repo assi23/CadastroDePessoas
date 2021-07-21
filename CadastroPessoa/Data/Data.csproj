@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0BB19715-2917-4901-901A-86F4411907C1}</ProjectGuid>
+    <ProjectGuid>{AB6C8D81-056C-4560-B4FD-46FA679A6921}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CadastroPessoa</RootNamespace>
-    <AssemblyName>CadastroPessoa</AssemblyName>
+    <RootNamespace>Data</RootNamespace>
+    <AssemblyName>Data</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,26 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Crud.cs" />
-    <Compile Include="Menu.cs" />
-    <Compile Include="MenuLista.cs" />
-    <Compile Include="ModuloPessoaFisica.cs" />
-    <Compile Include="ModuloPessoaJuridica.cs" />
-    <Compile Include="OperacoesPessoaFisica.cs" />
-    <Compile Include="OperacoesPessoaJuridica.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Endereco.cs" />
+    <Compile Include="Pessoa.cs" />
+    <Compile Include="PessoaFisica.cs" />
+    <Compile Include="PessoaJuridica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tela.cs" />
-    <Compile Include="Validacao.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\Data.csproj">
-      <Project>{7f3305c3-6734-45e3-804e-dfe2babde636}</Project>
-      <Name>Data</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

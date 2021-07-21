@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CadastroPessoa
+namespace Data
 {
-	class Pessoa
+	public class Pessoa
 	{
 		public int ID{ get; set; }
 		public string Nome { get; set; }

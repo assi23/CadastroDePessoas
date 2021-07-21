@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -235,21 +236,20 @@ namespace CadastroPessoa
             } while (true);
             return ie;
         }
-        public string ValidaCPFIgual()
+        public string ValidaCPFIgual(List<BaseModel> lista)
         {
             bool cpfIgual = true;
             string cpf;
             do
             {
                 cpf = ValidaCPF();
-                List<PessoaFisica> lista = Menu.listaPessoaFisica;
                 if (lista.Count == 0)
                 {
                     return cpf;
                 }
                 else
                 {
-                    foreach (var pessoa in lista)
+                    foreach (PessoaFisica pessoa in lista)
                     {
                         if (pessoa.CPF != cpf)
                         {
@@ -257,7 +257,7 @@ namespace CadastroPessoa
                         }
                         else
                         {
-                            Console.WriteLine($"O CPF {pessoa.CPF} ja está cadastrado no sistema no ID {pessoa.ID}!");
+                            Console.WriteLine($"O CPF {pessoa.CPF} ja está cadastrado no sistema no ID {pessoa.Id}!");
                             Console.WriteLine("Digite outro CPF: ");
                             cpfIgual = true;
                             break;
@@ -267,21 +267,21 @@ namespace CadastroPessoa
             } while (cpfIgual);
             return cpf;
         }
-        public string ValidaRGIgual()
+        public string ValidaRGIgual(List<BaseModel> lista)
         {
             bool rgIgual = true;
             string rg;
             do
             {
                 rg = ValidaRG();
-                List<PessoaFisica> lista = Menu.listaPessoaFisica;
+
                 if (lista.Count == 0)
                 {
                     return rg;
                 }
                 else
                 {
-                    foreach (var pessoa in lista)
+                    foreach (PessoaFisica pessoa in lista)
                     {
                         if (pessoa.RG != rg)
                         {
@@ -289,8 +289,8 @@ namespace CadastroPessoa
                         }
                         else
                         {
-                            Console.WriteLine($"O CPF {pessoa.CPF} ja está cadastrado no sistema no ID {pessoa.ID}!");
-                            Console.WriteLine("Digite outro CPF: ");
+                            Console.WriteLine($"O RG {pessoa.RG} ja está cadastrado no sistema no ID {pessoa.Id}!");
+                            Console.WriteLine("Digite outro RG: ");
                             rgIgual = true;
                             break;
                         }
@@ -299,21 +299,20 @@ namespace CadastroPessoa
             } while (rgIgual);
             return rg;
         }
-        public string ValidaCNPJIgual()
+        public string ValidaCNPJIgual(List<BaseModel> lista)
         {
             bool cnpjIgual = true;
             string cnpj;
             do
             {
                 cnpj = ValidaCNPJ();
-                List<PessoaJuridica> lista = Menu.listaPessoaJuridica;
                 if (lista.Count == 0)
                 {
                     return cnpj;
                 }
                 else
                 {
-                    foreach (var pessoa in lista)
+                    foreach (PessoaJuridica pessoa in lista)
                     {
                         if (pessoa.CNPJ != cnpj)
                         {
@@ -321,8 +320,8 @@ namespace CadastroPessoa
                         }
                         else
                         {
-                            Console.WriteLine($"O CPF {pessoa.CNPJ} ja está cadastrado no sistema no ID {pessoa.ID}!");
-                            Console.WriteLine("Digite outro CPF: ");
+                            Console.WriteLine($"O CNPJ {pessoa.CNPJ} ja está cadastrado no sistema no ID {pessoa.Id}!");
+                            Console.WriteLine("Digite outro CNPJ: ");
                             cnpjIgual = true;
                             break;
                         }
@@ -331,21 +330,20 @@ namespace CadastroPessoa
             } while (cnpjIgual);
             return cnpj;
         }
-        public string ValidaIEIgual()
+        public string ValidaIEIgual(List<BaseModel> lista)
         {
             bool ieIgual = true;
             string ie;
             do
             {
                 ie = ValidaCNPJ();
-                List<PessoaJuridica> lista = Menu.listaPessoaJuridica;
                 if (lista.Count == 0)
                 {
                     return ie;
                 }
                 else
                 {
-                    foreach (var pessoa in lista)
+                    foreach (PessoaJuridica pessoa in lista)
                     {
                         if (pessoa.IE != ie)
                         {
@@ -353,8 +351,8 @@ namespace CadastroPessoa
                         }
                         else
                         {
-                            Console.WriteLine($"O CPF {pessoa.CNPJ} ja está cadastrado no sistema no ID {pessoa.ID}!");
-                            Console.WriteLine("Digite outro CPF: ");
+                            Console.WriteLine($"O IE {pessoa.IE} ja está cadastrado no sistema no ID {pessoa.Id}!");
+                            Console.WriteLine("Digite outro IE: ");
                             ieIgual = true;
                             break;
                         }
@@ -365,7 +363,7 @@ namespace CadastroPessoa
         }
 
 
-        public DateTime ValidaDataNasc()
+        public DateTime ValidaData()
         {
             do
             {

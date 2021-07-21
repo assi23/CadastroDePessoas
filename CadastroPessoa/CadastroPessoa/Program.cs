@@ -11,7 +11,7 @@ namespace CadastroPessoa
 		static void Main(string[] args)
 		{
 			Menu m = new Menu();
-			m.CriarMenu();
+			m.Executa();
 		}
 	}
 }

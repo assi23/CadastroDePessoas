@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CadastroPessoa
+namespace Data
 {
-	class Endereco
+	public class Endereco
 	{
 		public string Rua { get; set; }
 		public int Numero { get; set; }
