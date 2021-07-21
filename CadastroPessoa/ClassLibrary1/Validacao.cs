@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CadastroPessoa
 {
-    class Validacao
+    public class Validacao
     {
         public int ValidaInteiro()
         {

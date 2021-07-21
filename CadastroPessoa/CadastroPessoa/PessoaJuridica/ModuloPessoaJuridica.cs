@@ -41,6 +41,7 @@ namespace CadastroPessoa
                     break;
                 case 2:// READ
                     crud.Listar();
+                    Esperar();
                     break;
                 case 3:// UPDATE
                     crud.Editar();

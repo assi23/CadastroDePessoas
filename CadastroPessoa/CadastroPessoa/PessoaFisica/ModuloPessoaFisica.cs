@@ -10,8 +10,10 @@ namespace CadastroPessoa
     {
         Validacao v;
         OperacoesPessoaFisica crud = new OperacoesPessoaFisica();
+        
         public ModuloPessoaFisica() : base("MENU PESSOA FISICA             ")
         {
+            
             this.funcaoEscolha = Escolha;
             this.funcaoOpcoes = Opcoes;
             v = new Validacao();
@@ -41,6 +43,7 @@ namespace CadastroPessoa
                     break;
                 case 2:// READ
                     crud.Listar();
+                    Esperar();
                     break;
                 case 3:// UPDATE
                     crud.Editar();

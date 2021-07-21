@@ -21,8 +21,27 @@ namespace Data
 			this.CNPJ = cnpj;
 			this.Endereco = endereco;
 		}
+		public PessoaJuridica(List<object> atributo)
+		{
+			this.Id = Convert.ToInt32(atributo[6]);
+			this.Nome = (string)atributo[2];
+			this.DataNasc = (DateTime)atributo[3];
+			this.Email = (string)atributo[4];
+			this.IE = (string)atributo[0];
+			this.CNPJ = (string)atributo[1];
+			this.Endereco = (Endereco)atributo[5];
+		}
 		public PessoaJuridica()
 		{
+		}
+		public void AlterarPessoaJuridica(List<object> atributo)
+		{
+			this.Nome = (string)atributo[2];
+			this.DataNasc = (DateTime)atributo[3];
+			this.Email = (string)atributo[4];
+			this.IE = (string)atributo[0];
+			this.CNPJ = (string)atributo[1];
+			this.Endereco = (Endereco)atributo[5];
 		}
 		public override string ToString()
 		{

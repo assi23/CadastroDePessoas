@@ -22,6 +22,18 @@ namespace Data
 			this.Bairro = bairro;
 			this.Cidade = cidade;
         }
+        public Endereco()
+        {
+
+        }
+        public Endereco(List<Object> atributos)
+        {
+			this.Rua = (string)atributos[0];
+			this.Numero = Convert.ToInt32(atributos[1]);
+			this.Complemento = (string)atributos[2];
+			this.Bairro = (string)atributos[3];
+			this.Cidade = (string)atributos[4];
+		}
 
 		public override string ToString()
 		{

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,16 @@ namespace CadastroPessoa
 		static void Main(string[] args)
 		{
 			Menu m = new Menu();
-			m.Executa();
+           m.Executa();
+   //         Pessoa p = new Pessoa();
+   //         foreach (var item in p.GetType().GetProperties())
+   //         {
+
+   //             Console.WriteLine(item.Name);
+				
+   //         }
+			//Console.ReadLine();
+
 		}
 	}
 }

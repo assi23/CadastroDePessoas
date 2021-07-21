@@ -25,6 +25,11 @@ namespace CadastroPessoa
             Console.WriteLine($"|                 {this._nomeTela}|");
             Console.WriteLine("|================================================|");
         }
+        public void Esperar()
+        {
+            Console.WriteLine("Digite algo para voltar ao menu....");
+            Console.ReadLine();
+        }
         
         public void Executa()
         {

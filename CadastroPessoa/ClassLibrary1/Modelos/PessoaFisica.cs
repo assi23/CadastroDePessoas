@@ -21,10 +21,28 @@ namespace Data
 			this.CPF = cpf;
 			this.Endereco = endereco;
 		}
+        public PessoaFisica(List<Object> atributos)
+        {
+            this.RG = (string)atributos[0];
+            this.CPF = (string)atributos[1];
+            this.Nome = (string)atributos[2];
+            this.DataNasc = (DateTime)atributos[3];
+            this.Email = (string)atributos[4];
+            this.Endereco = (Endereco)atributos[5];
+            this.Id = Convert.ToInt32(atributos[6]);
+        }
         public PessoaFisica()
         {
         }
-
+        public void AlterarPessoaFisica(List<Object> atributos)
+        {
+            this.RG = (string)atributos[0];
+            this.CPF = (string)atributos[1];
+            this.Nome = (string)atributos[2];
+            this.DataNasc = (DateTime)atributos[3];
+            this.Email = (string)atributos[4];
+            this.Endereco = (Endereco)atributos[5];
+        }
 
         public override string ToString()
         {
