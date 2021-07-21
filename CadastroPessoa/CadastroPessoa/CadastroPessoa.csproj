@@ -59,11 +59,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\Data.csproj">
+    <ProjectReference Include="..\Data\Data.csproj">
       <Project>{7f3305c3-6734-45e3-804e-dfe2babde636}</Project>
       <Name>Data</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
