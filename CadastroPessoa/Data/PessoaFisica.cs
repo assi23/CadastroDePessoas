@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CadastroPessoa
+namespace Data
 {
-	class PessoaFisica : Pessoa
+	public class PessoaFisica : Pessoa
 	{
 		public string RG{ get; set; }
 		public string CPF{ get; set; }
@@ -31,9 +31,9 @@ namespace CadastroPessoa
             return $"Pessoa {this.ID}\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\nNome: {this.Nome}\nData Nascimento: {this.DataNasc.ToShortDateString()}\nEmail: {this.Email}\nRG: {this.RG}\nCPF: {this.CPF.Insert(3, ".").Insert(7, ".").Insert(11, "-")}\nEndereço: {Endereco}\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=";
         }
 
-        public override bool Equals(object pessoaFisica)
-        {
-            return this.CPF.Equals(((PessoaFisica)pessoaFisica).CPF);
-        }
+        //public override bool Equals(object pessoaFisica)
+        //{
+        //    return this.CPF.Equals(((PessoaFisica)pessoaFisica).CPF);
+        //}
     }
 }

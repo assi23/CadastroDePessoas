@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CadastroPessoa
+namespace Data
 {
-	class PessoaJuridica : Pessoa	
+	public class PessoaJuridica : Pessoa	
 	{
 		public string IE{ get; set; }
 		public string CNPJ{ get; set; }
@@ -29,10 +29,10 @@ namespace CadastroPessoa
 			return $"Empresa {this.ID}\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\nNome: {this.Nome}\nData de Fundação: {this.DataNasc.ToShortDateString()}\nEmail: {this.Email}\nIE: {this.IE}\nCNPJ: {this.CNPJ.Insert(2, ".").Insert(6, ".").Insert(10, "/").Insert(15,"-")}\nEndereço: {Endereco}\n=-=-=-=-=-=-=-=-=-=-=-=-=-=-=";
 		}
 
-		public override bool Equals(object pessoaJuridica)
-		{
-			return this.CNPJ.Equals(((PessoaJuridica)pessoaJuridica).CNPJ);
-		}
+		//public override bool Equals(object pessoaJuridica)
+		//{
+		//	return this.CNPJ.Equals(((PessoaJuridica)pessoaJuridica).CNPJ);
+		//}
 	}
 	
 }

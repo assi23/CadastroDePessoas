@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0BB19715-2917-4901-901A-86F4411907C1}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>CadastroPessoa</RootNamespace>
-    <AssemblyName>CadastroPessoa</AssemblyName>
+    <ProjectGuid>{7F3305C3-6734-45E3-804E-DFE2BABDE636}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClassLibrary1</RootNamespace>
+    <AssemblyName>ClassLibrary1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,26 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Crud.cs" />
-    <Compile Include="Menu.cs" />
-    <Compile Include="MenuLista.cs" />
-    <Compile Include="ModuloPessoaFisica.cs" />
-    <Compile Include="ModuloPessoaJuridica.cs" />
-    <Compile Include="OperacoesPessoaFisica.cs" />
-    <Compile Include="OperacoesPessoaJuridica.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="BaseModel.cs" />
+    <Compile Include="Endereco.cs" />
+    <Compile Include="Pessoa.cs" />
+    <Compile Include="PessoaFisica.cs" />
+    <Compile Include="PessoaJuridica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tela.cs" />
-    <Compile Include="Validacao.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\Data.csproj">
-      <Project>{7f3305c3-6734-45e3-804e-dfe2babde636}</Project>
-      <Name>Data</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
