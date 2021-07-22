@@ -27,12 +27,12 @@ namespace FormsView
         {
             dgLista.Refresh();
             LimpaGrid();
+            dgLista.DataSource = Lista;
             this.dgLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clDelete});
             this.clDelete.HeaderText = "Deletar";
             this.clDelete.Name = "clDelete";
             this.clDelete.Text = "Delete";
-            dgLista.DataSource = Lista;
         }
 
      
