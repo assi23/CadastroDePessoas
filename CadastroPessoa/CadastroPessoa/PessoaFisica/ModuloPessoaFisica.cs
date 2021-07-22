@@ -11,7 +11,7 @@ namespace CadastroPessoa
         Validacao v;
         OperacoesPessoaFisica crud = new OperacoesPessoaFisica();
         
-        public ModuloPessoaFisica() : base("MENU PESSOA FISICA             ")
+        public ModuloPessoaFisica() : base("MENU PESSOA FISICA               ")
         {
             
             this.funcaoEscolha = Escolha;

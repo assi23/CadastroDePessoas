@@ -22,7 +22,7 @@ namespace CadastroPessoa
         public void Cabecalho()
         {
             Console.WriteLine("|================================================|");
-            Console.WriteLine($"|                 {this._nomeTela}|");
+            Console.WriteLine($"|               {this._nomeTela}|");
             Console.WriteLine("|================================================|");
         }
         public void Esperar()

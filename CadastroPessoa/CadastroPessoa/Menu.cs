@@ -13,7 +13,7 @@ namespace CadastroPessoa
         ModuloPessoaJuridica modPessoaJur;
         Validacao v;
 
-        public Menu() : base("MENU PRINCIPAL                 ")
+        public Menu() : base("MENU PRINCIPAL                   ")
         {
             v = new Validacao();
             modPessoaFis = new ModuloPessoaFisica();

@@ -10,7 +10,7 @@ namespace CadastroPessoa
     {
         Validacao v;
         OperacoesPessoaJuridica crud = new OperacoesPessoaJuridica();
-        public ModuloPessoaJuridica() : base("MENU PESSOA JURIDICA           ")
+        public ModuloPessoaJuridica() : base("MENU PESSOA JURIDICA             ")
         {
             this.funcaoEscolha = Escolha;
             this.funcaoOpcoes = Opcoes;

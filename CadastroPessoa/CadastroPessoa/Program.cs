@@ -11,17 +11,12 @@ namespace CadastroPessoa
 	{
 		static void Main(string[] args)
 		{
-			Menu m = new Menu();
-           m.Executa();
-   //         Pessoa p = new Pessoa();
-   //         foreach (var item in p.GetType().GetProperties())
-   //         {
+            Menu m = new Menu();
+            m.Executa();
 
-   //             Console.WriteLine(item.Name);
-				
-   //         }
-			//Console.ReadLine();
+        }
+        
+    }
+    
 
-		}
-	}
 }
