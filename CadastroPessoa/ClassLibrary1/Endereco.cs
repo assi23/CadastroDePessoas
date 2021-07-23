@@ -14,7 +14,7 @@ namespace Data
 		public string Bairro { get; set; }
 		public string Cidade { get; set; }
 
-        public Endereco(string rua, int num, string comp, string bairro, string cidade)
+        public Endereco(string cidade, string bairro, string rua, int num, string comp)
         {
 			this.Rua = rua;
 			this.Numero = num;
@@ -25,7 +25,7 @@ namespace Data
 
 		public override string ToString()
 		{
-			return $"Rua:{this.Rua} \nNúmero:{this.Numero} \nComplemento:{this.Complemento} \nBairro:{this.Bairro} \nCidade:{this.Cidade}";
+			return $"Cidade:{this.Cidade}\nBairro:{this.Bairro}\nRua:{this.Rua}\nNúmero:{this.Numero}\nComplemento:{this.Complemento} ";
 		}
 	}
 }

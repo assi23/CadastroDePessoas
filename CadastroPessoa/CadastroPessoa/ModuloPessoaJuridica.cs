@@ -10,7 +10,7 @@ namespace CadastroPessoa
     {
         Validacao v;
         OperacoesPessoaJuridica crud = new OperacoesPessoaJuridica();
-        public ModuloPessoaJuridica() : base("MENU PESSOA JURIDICA           ")
+        public ModuloPessoaJuridica() : base("MENU PESSOA JURIDICA")
         {
             this.funcaoEscolha = Escolha;
             this.funcaoOpcoes = Opcoes;
@@ -19,6 +19,8 @@ namespace CadastroPessoa
 
         public int Opcoes()
         {
+            Console.Clear();
+            Cabecalho();
             Console.WriteLine("|================================================|");
             Console.WriteLine("|         [1] Cadastrar                          |");
             Console.WriteLine("|         [2] Listar                             |");

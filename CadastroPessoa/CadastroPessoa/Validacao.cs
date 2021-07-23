@@ -20,46 +20,15 @@ namespace CadastroPessoa
                 }
                 catch (ArgumentException)
                 {
-                    Console.WriteLine("Dado nulo. Digite algo: ");
+                    Console.Write("Dado nulo. Digite algo: ");
                 }
                 catch (FormatException)
                 {
-                    Console.WriteLine("Dado invalido. Digite um número: ");
-                }
-                catch (OverflowException)
-                {
-                    Console.WriteLine($"Número fora dos limites. Digite algo entre {int.MinValue} e {int.MaxValue}): ");
+                    Console.Write("Dado invalido. Digite um número: ");
                 }
                 catch (Exception)
                 {
-                    Console.WriteLine("Dado invalido. Digite novamente: ");
-                }
-            } while (true);
-        }
-        public long ValidaLong()
-        {
-            do
-            {
-                try
-                {
-                    long dado = Convert.ToInt64(Console.ReadLine().Trim());
-                    return dado;
-                }
-                catch (ArgumentException)
-                {
-                    Console.WriteLine("Dado nulo. Digite algo: ");
-                }
-                catch (FormatException)
-                {
-                    Console.WriteLine("Dado invalido. Digite um número: ");
-                }
-                catch (OverflowException)
-                {
-                    Console.WriteLine($"Número fora dos limites. Digite algo entre {int.MinValue} e {int.MaxValue}): ");
-                }
-                catch (Exception)
-                {
-                    Console.WriteLine("Dado invalido. Digite novamente: ");
+                    Console.Write("Dado invalido. Digite novamente: ");
                 }
             } while (true);
         }
@@ -73,7 +42,7 @@ namespace CadastroPessoa
                 {
                     return dado;
                 }
-                Console.WriteLine("Erro! Digite algo: ");
+                Console.Write("Erro! Digite algo: ");
             } while (true);
         }
         public string ValidaConfirmacao()
@@ -94,7 +63,7 @@ namespace CadastroPessoa
             do
             {
                 rg = ValidaString();
-                if (rg.Length >= 6 && rg.Length <= 8)
+                if (rg.Length == 7 || rg.Length == 8)
                 {
                     try
                     {
@@ -103,24 +72,20 @@ namespace CadastroPessoa
                     }
                     catch (ArgumentException)
                     {
-                        Console.WriteLine("Dado nulo. Digite algo: ");
+                        Console.Write("Dado nulo. Digite algo: ");
                     }
                     catch (FormatException)
                     {
-                        Console.WriteLine("Dado invalido. Digite um número: ");
-                    }
-                    catch (OverflowException)
-                    {
-                        Console.WriteLine("Tamanho invalido. Digite novamente: ");
+                        Console.Write("Dado invalido. Digite um número: ");
                     }
                     catch (Exception)
                     {
-                        Console.WriteLine("Dado invalido. Digite novamente: ");
+                        Console.Write("Dado invalido. Digite novamente: ");
                     }
                 }
                 else
                 {
-                    Console.Write("Tamanho invalido. Digite um RG valido entre 6 e 8 digitos: ");
+                    Console.Write("Tamanho invalido. Digite um RG valido com 7 ou 8 digitos: ");
                 }
             } while (true);
             return rg;
@@ -140,19 +105,15 @@ namespace CadastroPessoa
                     }
                     catch (ArgumentException)
                     {
-                        Console.WriteLine("Dado nulo. Digite algo: ");
+                        Console.Write("Dado nulo. Digite algo: ");
                     }
                     catch (FormatException)
                     {
-                        Console.WriteLine("Dado invalido. Digite um número: ");
-                    }
-                    catch (OverflowException)
-                    {
-                        Console.WriteLine("Tamanho invalido. Digite novamente: ");
+                        Console.Write("Dado invalido. Digite um número: ");
                     }
                     catch (Exception)
                     {
-                        Console.WriteLine("Dado invalido. Digite novamente: ");
+                        Console.Write("Dado invalido. Digite novamente: ");
                     }
                 }
                 else
@@ -177,19 +138,15 @@ namespace CadastroPessoa
                     }
                     catch (ArgumentException)
                     {
-                        Console.WriteLine("Dado nulo. Digite algo: ");
+                        Console.Write("Dado nulo. Digite algo: ");
                     }
                     catch (FormatException)
                     {
-                        Console.WriteLine("Dado invalido. Digite um número: ");
-                    }
-                    catch (OverflowException)
-                    {
-                        Console.WriteLine("Tamanho invalido. Digite novamente: ");
+                        Console.Write("Dado invalido. Digite um número: ");
                     }
                     catch (Exception)
                     {
-                        Console.WriteLine("Dado invalido. Digite novamente: ");
+                        Console.Write("Dado invalido. Digite novamente: ");
                     }
                 }
                 else
@@ -219,10 +176,6 @@ namespace CadastroPessoa
                     catch (FormatException)
                     {
                         Console.WriteLine("Dado invalido. Digite um número: ");
-                    }
-                    catch (OverflowException)
-                    {
-                        Console.WriteLine("Tamanho invalido. Digite novamente: ");
                     }
                     catch (Exception)
                     {
@@ -336,7 +289,7 @@ namespace CadastroPessoa
             string ie;
             do
             {
-                ie = ValidaCNPJ();
+                ie = ValidaIE();
                 if (lista.Count == 0)
                 {
                     return ie;

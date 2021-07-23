@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadastroPessoa", "CadastroP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "ClassLibrary1\Data.csproj", "{7F3305C3-6734-45E3-804E-DFE2BABDE636}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MenuForm", "MenuForm\MenuForm.csproj", "{0954CFB2-650F-4D2E-82FC-377A93F9328B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7F3305C3-6734-45E3-804E-DFE2BABDE636}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7F3305C3-6734-45E3-804E-DFE2BABDE636}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7F3305C3-6734-45E3-804E-DFE2BABDE636}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0954CFB2-650F-4D2E-82FC-377A93F9328B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0954CFB2-650F-4D2E-82FC-377A93F9328B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0954CFB2-650F-4D2E-82FC-377A93F9328B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0954CFB2-650F-4D2E-82FC-377A93F9328B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

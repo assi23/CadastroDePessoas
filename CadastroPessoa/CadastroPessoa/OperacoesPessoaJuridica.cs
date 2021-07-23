@@ -9,10 +9,12 @@ namespace CadastroPessoa
 {
     public class OperacoesPessoaJuridica : Crud
     {
+        ModuloLista modLista;
         Validacao v;
         int idPessoaJur = 1;
         public OperacoesPessoaJuridica()
         {
+            modLista = new ModuloLista();
             v = new Validacao();
             this.operacaoCriar = Cadastro;
             this.operacaoListar = MostraLista;
@@ -22,9 +24,6 @@ namespace CadastroPessoa
 
         private void Cadastro()
         {
-            string resp = string.Empty;
-            do
-            {
                 Console.WriteLine($"\nCadastrando {idPessoaJur}ª Pessoa: ");
                 Console.Write("Digite o Nome: ");
                 string nome = v.ValidaString();
@@ -37,28 +36,25 @@ namespace CadastroPessoa
                 Console.Write("Digite o CNPJ: ");
                 string cnpj = v.ValidaCNPJIgual(lista);
                 Console.Write("Digite a Rua: ");
+                string cidade = v.ValidaString();
+                Console.Write("Digite o Bairro: ");
+                string bairro = v.ValidaString();
+                Console.Write("Digite a Cidade: ");
                 string rua = v.ValidaString();
                 Console.Write("Digite o número: ");
                 int num = v.ValidaInteiro();
                 Console.Write("Digite o complemento: ");
                 string comp = v.ValidaString();
-                Console.Write("Digite o Bairro: ");
-                string bairro = v.ValidaString();
-                Console.Write("Digite a Cidade: ");
-                string cidade = v.ValidaString();
 
-                Endereco endModel = new Endereco(rua, num, comp, bairro, cidade);
+            Endereco endModel = new Endereco(cidade, bairro, rua, num, comp);
                 PessoaJuridica model = new PessoaJuridica(idPessoaJur, nome, data, email, ie, cnpj, endModel);
                 lista.Add(model);
                 idPessoaJur++;
-
-                Console.Write("Deseja cadastrar mais uma Pessoa? [S/N]: ");
-                resp = v.ValidaConfirmacao();
-            } while (resp.Equals("s"));
         }
         private void MostraLista()
         {
-            int var;
+            modLista.CopiaLista(lista);
+            modLista.Executa();
         }
         private void EditaCadastro()
         {

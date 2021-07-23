@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0BB19715-2917-4901-901A-86F4411907C1}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>CadastroPessoa</RootNamespace>
-    <AssemblyName>CadastroPessoa</AssemblyName>
+    <ProjectGuid>{0954CFB2-650F-4D2E-82FC-377A93F9328B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MenuForm</RootNamespace>
+    <AssemblyName>MenuForm</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,35 +35,76 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Crud.cs" />
-    <Compile Include="Menu.cs" />
-    <Compile Include="ModuloLista.cs" />
-    <Compile Include="ModuloPessoaFisica.cs" />
-    <Compile Include="ModuloPessoaJuridica.cs" />
-    <Compile Include="OperacoesLista.cs" />
-    <Compile Include="OperacoesPessoaFisica.cs" />
-    <Compile Include="OperacoesPessoaJuridica.cs" />
+    <Compile Include="MenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuForm.Designer.cs">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuPessoaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuPessoaForm.Designer.cs">
+      <DependentUpon>MenuPessoaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tela.cs" />
-    <Compile Include="Validacao.cs" />
+    <EmbeddedResource Include="MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuPessoaForm.resx">
+      <DependentUpon>MenuPessoaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CadastroPessoa\CadastroPessoa.csproj">
+      <Project>{0bb19715-2917-4901-901a-86f4411907c1}</Project>
+      <Name>CadastroPessoa</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ClassLibrary1\Data.csproj">
       <Project>{7f3305c3-6734-45e3-804e-dfe2babde636}</Project>
       <Name>Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PessoaFisica.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PessoaJuridica.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

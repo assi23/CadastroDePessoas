@@ -22,7 +22,7 @@ namespace CadastroPessoa
         public void Cabecalho()
         {
             Console.WriteLine("|================================================|");
-            Console.WriteLine($"|                 {this._nomeTela}|");
+            Console.WriteLine($"|                 {this._nomeTela}           |");
             Console.WriteLine("|================================================|");
         }
         
@@ -31,8 +31,6 @@ namespace CadastroPessoa
             int escolha = 0;
             do
             {
-                Console.Clear();
-                Cabecalho();
                 escolha = funcaoOpcoes();
                 funcaoEscolha(escolha);
             } while (escolha != 0);

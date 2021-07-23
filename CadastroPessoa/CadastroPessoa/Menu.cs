@@ -13,7 +13,7 @@ namespace CadastroPessoa
         ModuloPessoaJuridica modPessoaJur;
         Validacao v;
 
-        public Menu() : base("MENU PRINCIPAL                 ")
+        public Menu() : base("MENU PRINCIPAL      ")
         {
             v = new Validacao();
             modPessoaFis = new ModuloPessoaFisica();
@@ -23,6 +23,8 @@ namespace CadastroPessoa
         }
         public int Opcoes()
         {
+            Console.Clear();
+            Cabecalho();
             Console.WriteLine("|================================================|");
             Console.WriteLine("|         [1] Modulo Pessoa Fisica               |");
             Console.WriteLine("|         [2] Modulo Pessoa Juridica             |");
