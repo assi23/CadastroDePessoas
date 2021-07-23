@@ -11,12 +11,14 @@ using Data;
 
 namespace FormsView
 {
-    public partial class PessoaFisicaForm : Form
+    public partial class PessoaJuridicaForm : Form
     {
-        Cadastrar cadastrar;
-        Operacoes listar;
         List<Pessoa> listaPF;
-        public PessoaFisicaForm(List<Pessoa> lista)
+        Operacoes listar;
+        Cadastrar cadastrar;
+
+
+        public PessoaJuridicaForm(List<Pessoa> lista)
         {
             listaPF = lista;
             InitializeComponent();
@@ -28,20 +30,22 @@ namespace FormsView
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
-        {            
-            cadastrar = new Cadastrar(listaPF, true);
-            this.cadastrar.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Operacao_FormClosed);
+        {
+            cadastrar = new Cadastrar(listaPF, false);
+            this.cadastrar.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Operacao_FormClose);
             Hide();
             cadastrar.Show();
+            
         }
-        private void Operacao_FormClosed(object sender, FormClosingEventArgs e)
+        private void Operacao_FormClose(Object sender, FormClosingEventArgs e)
         {
             Show();
         }
+
         private void btnListar_Click(object sender, EventArgs e)
         {
-            listar = new Operacoes(listaPF, true);          
-            this.listar.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Operacao_FormClosed);
+            listar = new Operacoes(listaPF, false);
+            this.listar.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Operacao_FormClose);
             Hide();
             listar.Show();
         }

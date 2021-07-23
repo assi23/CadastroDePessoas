@@ -1,7 +1,7 @@
 ﻿
 namespace FormsView
 {
-    partial class PessoaFisicaForm
+    partial class PessoaJuridicaForm
     {
         /// <summary>
         /// Required designer variable.
@@ -120,7 +120,7 @@ namespace FormsView
             this.btnListar.UseVisualStyleBackColor = false;
             this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
-            // PessoaFisicaForm
+            // PessoaJuridicaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -134,7 +134,7 @@ namespace FormsView
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbTitulo);
             this.ForeColor = System.Drawing.SystemColors.Control;
-            this.Name = "PessoaFisicaForm";
+            this.Name = "PessoaJuridicaForm";
             this.Load += new System.EventHandler(this.PessoaFisicaForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

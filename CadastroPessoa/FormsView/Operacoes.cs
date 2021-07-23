@@ -50,14 +50,15 @@ namespace FormsView
 
         private void dgLista_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (this.Lista.Count > 0)
-            {
-                Pessoa pessoaF = this.Lista[e.RowIndex];
-                LimpaGrid();
-                this.Lista.Remove(pessoaF);
-                MessageBox.Show("Removido com sucesso");
-                CarregarLista();  
-            }
+                if (this.Lista.Count > 4)            
+                {
+                    Pessoa pessoaF = this.Lista[e.RowIndex];
+                    LimpaGrid();
+                    this.Lista.Remove(pessoaF);
+                    MessageBox.Show("Removido com sucesso");
+                    CarregarLista();  
+                }
+            
         }
         private void LimpaGrid()
         {

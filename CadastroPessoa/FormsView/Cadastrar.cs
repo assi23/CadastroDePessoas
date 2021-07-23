@@ -17,9 +17,14 @@ namespace FormsView
         bool fisica;
         public Cadastrar(List<Pessoa> listaFora, bool fisicaFora)
         {
-            fisica = fisicaFora;
-            lista = listaFora;
             InitializeComponent();
+            fisica = fisicaFora;
+            if (!fisica)
+            {
+                lbCpf.Text = "IE:";
+                lbRg.Text = "CNPJ:";
+            }
+            lista = listaFora;
         }
 
         private void Cadastrar_Load(object sender, EventArgs e)
@@ -29,10 +34,15 @@ namespace FormsView
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+
             Endereco endereco = new Endereco(tbxRua.Text, Convert.ToInt32(textBox9.Text), tbxComplemento.Text, tbxBairro.Text, tbxCidade.Text);
             if (fisica)
             {
                 lista.Add(new PessoaFisica(lista.Count + 1, tbxNome.Text, Convert.ToDateTime(tbxData.Text), tbxEmail.Text, tbxRG.Text, tbxCPF.Text, endereco));
+            }
+            else
+            {
+                lista.Add(new PessoaJuridica(lista.Count + 1, tbxNome.Text, Convert.ToDateTime(tbxData.Text), tbxEmail.Text, tbxRG.Text, tbxCPF.Text, endereco));
 
             }
             lbAviso.Visible = true;

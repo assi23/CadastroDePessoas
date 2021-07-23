@@ -16,23 +16,42 @@ namespace FormsView
         List<Pessoa> listaPF;
         List<Pessoa> listaJuridica;
 
-
+        PessoaFisicaForm pfForm;
+        PessoaJuridicaForm pjForm;
         public TelaPrincipalForm()  
         {
-            InitializeComponent();
+
             listaPF = new List<Pessoa>();
+            InitializeComponent();
             listaPF.Add(new PessoaFisica(1, "12 / 12 / 1212", Convert.ToDateTime("12 / 12 / 1212"), " 1", "1", " 1", new Endereco("1", 1, "1", "1", "1")));
             listaJuridica = new List<Pessoa>();
+            Hide();
+            
+            Show();
         }
         private void TelaPrincipalForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void btnPessoaFisica_Click(object sender, EventArgs e)
+        private void btnPessoaFisica_Click(object sender, EventArgs e)        
         {
-            PessoaFisicaForm pfForm = new PessoaFisicaForm(listaPF);
+            pfForm = new PessoaFisicaForm(listaPF);
+            this.pfForm.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Operacao_FormClose);
+            Hide();
             pfForm.Show();
+
+        }
+        private void Operacao_FormClose(Object sender, FormClosingEventArgs e)
+        {
+            Show();
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            pjForm = new PessoaJuridicaForm(listaJuridica);
+            this.pjForm.FormClosing += new FormClosingEventHandler(this.Operacao_FormClose);
+            Hide();
+            pjForm.Show();
         }
     }
 }
